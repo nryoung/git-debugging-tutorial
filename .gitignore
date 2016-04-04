@@ -1,2 +1,3 @@
 flaskr.db
 __pycache__
+.cache
