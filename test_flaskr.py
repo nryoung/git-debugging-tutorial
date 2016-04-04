@@ -34,13 +34,11 @@ def logout(client):
 
 
 def test_empty_db(client):
-    """Start with a blank database."""
     rv = client.get('/')
     assert b'No entries here so far' in rv.data
 
 
 def test_login_logout(client):
-    """Make sure login and logout works"""
     rv = login(client, flaskr.app.config['USERNAME'],
                flaskr.app.config['PASSWORD'])
     assert b'You were logged in' in rv.data
@@ -55,7 +53,6 @@ def test_login_logout(client):
 
 
 def test_messages(client):
-    """Test that messages work"""
     login(client, flaskr.app.config['USERNAME'],
           flaskr.app.config['PASSWORD'])
     rv = client.post('/add', data=dict(
