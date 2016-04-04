@@ -96,9 +96,9 @@ def login():
         elif request.form['password'] != app.config['PASSWORD']:
             error = 'Invalid password'
         else:
-            session['logged_in'] = True
             flash('You were logged in')
             return redirect(url_for('show_entries'))
+    session['logged_in'] = True
     return render_template('login.html', error=error)
 
 
